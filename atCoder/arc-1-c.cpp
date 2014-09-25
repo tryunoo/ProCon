@@ -34,7 +34,6 @@ typedef vector< vector<int> > vi2;
 
 int check(vs boad, int x, int i) {
 	rep(n,8) if(((boad[n][i] == 'Q' ||  boad[n][i+(n-x)] == 'Q' || boad[n][i-(n-x)] == 'Q') && n!=x) || (boad[x][n] == 'Q' && n!=i)) return 1;
-
 	return 0;
 }
 
@@ -46,10 +45,7 @@ int dfs(vs boad, int x) {
 
 	rep(i,8) {
 		if(boad[x][i] == 'Q') {
-			if(check(boad, x, i)) {
-				print("No Answer");
-				exit(0);
-			}
+			if(check(boad, x, i)) return 0;
 			return dfs(boad, x+1);
 		}
 	}
@@ -73,4 +69,3 @@ int main() {
 	print("No Answer");
 	return 0;
 }
-
