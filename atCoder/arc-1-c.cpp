@@ -60,11 +60,9 @@ int dfs(vs boad, int x) {
 	return 0;
 }
 
-
 int main() {
 	vs boad(10);
 	rep(i,8) cin >> boad[i];
-
 	dfs(boad, 0);
 	print("No Answer");
 	return 0;
